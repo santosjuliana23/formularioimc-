@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora imc</title>
+    <style>
+        body{
+            color: rgb(122, 0, 116);
+        }
+    </style>
+    <script>
+        function resultado(vetor) {
+      let resultado = 0;
+      for (v of vetor){
+        resultado= resultado + v;
+      }
+      return resultado;
+    }
+    let vet1 = [1, 2, 3, 4];
+    console.log(resultado(vet1));
+     function clickcalcular() {
+      let peso = document.getElementById("txtpeso").value;
+      let altura = document.getElementById("txtaltura").value;
+      if (peso == ""){
+        alert("Informe o peso.");
+      }else if ( altura == ""){
+        alert("Informe a altura.");
+      }else{
+        let resultado = Number(peso) + Number(altura);
+        document.getElementById("txtresult").value = resultado;
+        
+      }
+    }
+
+    function clicklimpar() {
+      document.getElementById("txtpeso").value = "";
+      document.getElementById("txtaltura").value = "";
+      document.getElementById("txtresult").value = "";
+      
+    }
+    </script>
+</head>
+<body>
+    <h1 id="tit">
+    calculadora de imc
+  </h1>
+
+  <form>
+    <div>
+      <label for="txtpeso">peso</label>
+      <input type="number" name="" id="txtpeso" value="1">
+    </div>
+    <br>
+    <div>
+      <label for="txtaltura">altura</label>
+      <input type="number" name="" id="txtaltura">
+    </div>
+    <br>
+    <div>
+      <label for="txtresult">IMC:</label>
+      <input type="number" name="" id="txtresult" disabled>
+    </div>
+    <br>
+    <div>
+      <input type="button" value="Calcular" onclick="clickcalcular();">
+
+      <input type="button" value="Limpar" onclick="clicklimpar();">
+    </div>
+  </form>
+    
+</body>
+</html>
