@@ -27,8 +27,8 @@
       }else if ( altura == ""){
         alert("Informe a altura.");
       }else{
-        let resultado = Number(peso) + Number(altura);
-        document.getElementById("txtresult").value = resultado;
+        let resultado = Number(peso) / (Number(altura) * Number(altura));
+        document.getElementById("txtresult").value = (resultado.toFixed(2));
         
       }
     }
